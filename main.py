@@ -43,70 +43,70 @@ character_post_murder_action_list = list(filtered_df_post_murder.itertuples(inde
 character_item_to_find_list = list(filtered_df_item_find.itertuples(index=False, name=None))
 
 
+characterBios = [
+    ("Aden Smith", "Security and Spiritual Detail", "Swing from calm to angry rapidly. Talk passionately about spiritual matters, then criticize materialism angrily. Keep people guessing which side they’ll get."),("Bennet Silverman", "VSC CEO", "Exude confidence in every movement. Make people feel special with your words while subtly steering conversations in your favor."),
+]
+
+# # List of Characters : Each character's information is stored
+# characterBios = [
+#     ("Aden Smith", "Security and Spiritual Detail", "Swing from calm to angry rapidly. Talk passionately about spiritual matters, then criticize materialism angrily. Keep people guessing which side they’ll get."),
+#     ("Bennet Silverman", "VSC CEO", "Exude confidence in every movement. Make people feel special with your words while subtly steering conversations in your favor."),
+#     ("Brooklyn Weiss", "Banker", "Lean in close and whisper secrets, then laugh loudly. Talk with your hands and act overly familiar with everyone."),
+#     ("Calvin Mendelson", "Architect", "Speak slowly and deliberately. Smile only when something unpleasant happens to someone else. Be dismissive of emotional outbursts."),
+#     ("Carlos Rosenberg", "Popstar", "Keep the spotlight on yourself with grand gestures and bold stories. Correct others and make everything about your glamorous life. Laugh loudly at your own jokes."),
+#     ("Charles Penrose", "Chief of Security", "Move quietly, almost stealthily. Listen more than you speak, but when you do, speak quickly and decisively. Pay close attention to details."),
+#     ("Chloe Larkin", "Art Appraiser", "Speak sensibly and stay detached from drama. Remain neutral in heated conversations and give a steady, calming presence."),
+#     ("Dannielle Horowitz", "Survivalist", "Speak plainly without sugarcoating. Look others directly in the eyes and move with a purpose. Ignore trivial matters—focus on practical concerns."),
+#     ("Dennis Shapiro", "District Judge", "Speak with authority and correct others with a subtle air of superiority. Always look immaculate and adjust your attire often."),
+#     ("Dimitri Volkov", "Marketing Director", "Criticize everyone’s choices, especially in fashion or design. Raise an eyebrow when unimpressed and remain highly focused on your appearance."),
+#     ("Elaine Walker", "Auction Manager", "Never raise your voice, even in arguments. Keep your posture straight, and always appear composed. Deflect intrusive questions with a polite smile."),
+#     ("Fiona Gold", "VSC Intern", "Ask a lot of questions and take notes. Try too hard to fit in with the higher-ups. Work through every break and make sure everyone knows it."),
+#     ("Gabrial Katz", "Paleontologist", "Act distracted and daydreamy. Speak of grand ideas and theories while ignoring practical matters. Avoid manual labor at all costs."),
+#     ("Gina Silverman", "Shady Investor", "Focus intensely on discussions about money or profit. Be impatient when others talk about unimportant matters. Nod approvingly at anyone discussing deals or money."),
+#     ("Greyson Blau", "Bar Manager", "Stand with arms crossed and nod or shake your head curtly. Be direct in conversation and don’t waste time on small talk. Keep an eye on the exits."),
+#     ("Hugo Pierce", "Cocktail Expert", "Laugh too loudly and dominate the bar. Make cynical jokes and flirt with everyone—until the drinks run out, then get bitter."),
+#     ("Jack Adler", "Lawyer", "Cross your arms often and mutter under your breath. Roll your eyes at naive statements and give brutally honest opinions, whether asked or not."),
+#     ("Lisa Emerson", "Influencer", "Speak enthusiastically about the latest gossip. Be overly friendly, touch people’s arms while talking, and take selfies constantly."),
+#     ("Londyn Schneider", "Innovation Director", "Keep a calm and steady voice. Rarely show emotion, and pause before answering questions to seem deeply contemplative."),
+#     ("Marcus Mann", "Rancher", "Maintain good manners, but let unsettling comments slip out. Keep eye contact just a second too long and occasionally flash a predatory smile."),
+#     ("Margo Silverman", "Wealthy Socialite", "Use cutting remarks and deliver backhanded compliments. Keep your chin high, and look down at people—even if you’re shorter."),
+#     ("Mary Kaplan", "Art Director", "Take sudden risks in conversations—share daring opinions, then backtrack if challenged. Fidget when nervous, and speak too loudly when trying to impress."),
+#     ("Nina Drake", "Paparazzi", "Ask intrusive questions with an innocent smile. Carry a camera or notepad, and make lots of eye contact. Give people the sense you’re always listening."),
+#     ("Olivia Winchester", "Auctioneer", "Speak softly but clearly. Make everyone feel heard while carefully avoiding direct answers yourself. Defuse tension with humor and wit."),
+#     ("Paige Mendelson", "Engineer", "Offer to help others but remain distant. Speak plainly and never overreact. Keep a calm, observant eye on what others are doing."),
+#     ("Rafael Dupont", "Art Forger", "Use sophisticated language, admire the artwork excessively, and seem a little too knowledgeable about forgeries. Be generous with compliments that feel slightly rehearsed."),
+#     ("Roger Cohen", "Senior Journalist", "Speak in a low, controlled voice. Interrupt and dominate conversations. Always lead with questions that put others on the spot."),
+#     ("Roman Silverman", "VSC CFO", "Flatter everyone excessively while subtly competing for attention. Gossip, but get visibly defensive if the topic turns to you."),
+#     ("Ruby Silverman", "VSC COO", "Speak quickly, always on your way to somewhere more important. Drop hints about future plans and listen carefully for any useful information, but don’t get too attached to anyone."),
+#     ("Ted Cruz", "Senator", "Speak loudly and interrupt others with grand patriotic statements. Defend your position aggressively and change your opinion if it suits your mood."),
+#     ("Trenton Silverman", "Old Biz Owner", "Interrupt others when they speak, scoff at 'lesser' people’s ideas, and talk endlessly about your past successes. Turn up your nose at anything you find beneath you."),
+#     ("Vivan Thorne", "Art Curator", "Speak rapidly and get excited at the slightest hint of scandal. Casually hint at secrets you 'know' without giving them away fully."),
+#     ("Xavier King", "Accountant", "Speak quickly, stutter when nervous, and dominate the conversation to avoid scrutiny. Brag about small achievements as if they were monumental.")
+# ]
+
+
+# lists 
 # Display the result
 print(character_action_list[4])
 print(character_post_murder_action_list[4][2])
 print(character_item_to_find_list[4][2])
 
-#program to print the files
-
-
-# List of Characters : Each character's information is stored
-characterBios = [
-    ("Aden Smith", "Security and Spiritual Detail", "When people become famous, they need both security and spiritual advice, and that's what Aden provides to the pop star Carlos Rosenberg. For a huge fee."),
-    ("Bennet Silverman", "VSC CEO", "Bennet is the oldest son of old Grandpa Trenton and is the first person in VSC. A charmer with an agenda, Bennet can weave a tale so convincing you'll wonder if it\'s all true."),
-    ("Brooklyn Weiss", "Banker", "You know Brooklyn if you are in the right financial circles. She is the one to go to if you need a loan. She can't afford anything to stay secret around her for too long."),
-    ("Calvin Mendelson", "Architect", "A respectable employee of VSC, Calvin's smile never quite reaches his eyes. He's the architect of more than just buildings."),
-    ("Carlos Rosenberg", "Popstar", "Carlos is a local celebrity. His arrogance is as brash as his fashion choices. When he's around, you\'ll hear him before you see him—just the way he likes it."),
-    ("Charles Penrose", "Chief of Security", "Charles is in charge of maintaining order in the auction house. His cool demeanor and calculating eyes make you wonder just how much he\'s hiding."),
-    ("Chloe Larkin", "Art Appraiser", "Chloe is a long-time contractor of the Auction House, and her reliability is legendary. But loyalty only goes so far when her interests are at stake."),
-    ("Dannielle Horowitz", "Survivalist", "Tough, smart, and fiercely independent, Dannielle knows how to handle any situation. She likes collecting underpriced ancient items; they give her Indiana Jones vibes."),
-    ("Dennis Shapiro", "District Judge", "Judge Shapiro likes to attend auctions, where he looks for rare species of antiques and crooks. His obsession with justice leaves little room for compassion."),
-    ("Dimitri Volkov", "Marketing Director", "A big shot in VSC, Dimitri values his position. His style is impeccable, his smile is dazzling, and his critiques are scathing."),
-    ("Elaine Walker", "Auction Manager", "Elaine has been running events like this for the Auction House forever. Always impeccably composed, she seems immune to chaos."),
-    ("Evan Levy", "Company Food Director", "A rare example of a VSC employee who is valued by everyone. Evan's hunger for success matches his appetite for gourmet food."),
-    ("Fiona Gold", "VSC Intern", "Fiona just started as an intern at VSC. Her relentless drive has earned her a reputation as a workhorse, but ambition is a double-edged sword."),
-    ("Gabriel Katz", "Paleontologist", "A regular at auctions, Gabriel\'s dreamy expression and wandering gaze suggest he has his head in the clouds — until he turns those perceptive eyes on you."),
-    ("Gina Zimmerman", "Shady Investor", "Business is a game, and she plays to win — no matter the cost. Gina thinks she made her main investment by planning to marry Roman Silverman, the CFO."),
-    ("Greyson Blau", "Bar Manager", "The Auction House values people like Greyson. He is everywhere and all at once. Greyson is a man of principle — if you play by his rules."),
-    ("Hugo Pierce", "Cocktail Expert", "Employed by the Auction House, loved and despised by many. Hugo\'s charm is intoxicating, but his loyalty runs only as deep as the bottom of his glass."),
-    ("Ivy Prescott", "Chemist", "Nobody knows why Ivy likes to attend auctions. Her drive is as ruthless as her chemistry experiments."),
-    ("Jack Adler", "Lawyer", "You may wonder why the Auction House even needs a lawyer at their events! Jack's blunt attitude doesn\'t win him many friends, but he couldn\'t care less."),
-    ("Jayden Mizrahi", "Data Scientist", "Working to increase ad revenues in VSC, Jayden\'s sharp wit and infectious laugh make her a delight to be around."),
-    ("Lisa Emerson", "Influencer", "Flashy and fabulous, Lisa lives for likes and follows. Drama is her bread and butter, and an auction is the perfect place to get it."),
-    ("Londyn Schneider", "Innovation Director", "Londyn is convinced he drives VSC forward. Every move is calculated, every decision measured. He\'s a man of few words but many thoughts."),
-    ("Marcus Mann", "Rancher", "First time seen at an auction, Marcus is the perfect rancher — straightforward, dependable, and courteous, but just on the surface."),
-    ("Margo Lane", "Wealthy Socialite", "A respectable auction like this is the place to be for Margo. Elegant and entitled, she is quick to throw shade and quicker to defend herself."),
-    ("Mary Kaplan", "Art Director", "Mary is an art director at VSC. Behind her confident front, there's a lingering fear that she\'s one misstep away from losing it all."),
-    ("Nina Drake", "Paparazzi", "There are many reasons for a paparazzi to attend an auction. If there's gossip to be found, she\'s already taken the picture."),
-    ("Olivia Winchester", "Auctioneer", "Olivia is the one in the Auction House who runs the show. With her honeyed voice and silver tongue, she could sell sand in the desert."),
-    ("Paige Mendelson", "Engineer", "An employee of VSC, Paige has the patience of a saint and the loyalty of a hound, but even she has limits."),
-    ("Rafael Dupont", "Art Forger", "Why would an art forger attend an auction? Known for his charm and refined taste, Rafael is a master of illusion."),
-    ("Roger Cohen", "Senior Journalist", "Roger doesn\'t just report the news—he makes it. His influence runs deep, and those who cross him often find their dirty laundry making headlines."),
-    ("Roman Silverman", "VSC CFO", "Roman is a son of old Grandpa Trenton and manages the financial side of VSC. Roman thrives in the social spotlight and is always jealous of his fiancée Gina Zimmerman."),
-    ("Ruby Silverman", "VSC COO", "Although the only daughter of Grandpa Trenton, Ruby didn't grow up spoiled. Sharp-witted and shrewd, she\'s not one to be underestimated."),
-    ("Ted Cruz", "Senator", "Ted\'s loud opinions and unpredictable behavior make him hard to handle. He's a patriot... if only you could figure out whose side he's on."),
-    ("Trenton Silverman", "Old Biz Owner", "Old Grandpa Trenton founded VSC and has been running it for longer than anyone can remember. His sneer speaks louder than any words."),
-    ("Vivian Thorne", "Art Curator", "Vivian\'s gossip is as reliable as her taste in art, and she loves nothing more than a scandal—especially if she\'s the one to break it."),
-    ("Xavier King", "Accountant", "Xavier thinks he\'s the kind of guy in VSC who gets work done. He always knows something you don\'t — until he spills.")
-]
-
-
 
 
 # For printing
 # Loading the base image and fonts
-backgroundImage = Image.open('./Background/Character list long jpeg copy.jpg')
+backgroundImage = Image.open('./Background/A4 character sheet.jpg')
 
 # Load the custom font (Replace 'path/to/your/font.ttf' with the actual path)
 font_path = './font/Pacifico-Regular.ttf'  # Ensure the font path is correct
 
 
 
-font_size = 46
+font_size = 125
 font = ImageFont.truetype(font_path, font_size)
-font2= ImageFont.truetype('./font/Benne-Regular.ttf', 38)
-font3= ImageFont.truetype('./font/ABeeZee-Regular.ttf', 40)
+font2= ImageFont.truetype('./font/Benne-Regular.ttf', 70)
+font3= ImageFont.truetype('./font/ABeeZee-Regular.ttf', 75)
+font4= ImageFont.truetype('./font/Benne-Regular.ttf', 70)
 
 # 77777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
 
@@ -127,11 +127,11 @@ for idx, (name, occupation, bio) in enumerate(characterBios):
     draw = ImageDraw.Draw(image)
 
 # Settings for text placement
-column_size = 100
-x, y = column_size, 150  # Starting position for the first column
+column_size = 140
+x, y = column_size, 130  # Starting position for the first column
 x2, y2 = 1300, 620  # Starting position for the second column
-line_spacing = 5  # Space between lines for names
-bio_line_spacing = 5  # Space between lines for bios
+line_spacing = 40  # Space between lines for names
+bio_line_spacing = 15  # Space between lines for bios
 wrap_width = 60  # Number of characters per line before wrapping
 
 # Helper function for text wrapping
@@ -166,11 +166,10 @@ for name,occupation, bio in first_column_bios:
     name_text_height = font.getbbox(name)[3]  # The height of the name text
     
 # Ops adding the job
-    draw.text((x+450, y+20),"("+ occupation + ")", font=font3, fill="darkorange")
+    draw.text((x+1100, y+90),"("+ occupation + ")", font=font3, fill="darkorange")
     
     
     y += name_text_height + line_spacing  # Move down for bio
-
 
     # Wrap and draw the bio
     wrapped_bio = wrap_text(bio, wrap_width)
@@ -180,27 +179,30 @@ for name,occupation, bio in first_column_bios:
         y += bio_text_height + bio_line_spacing  # Move down for the next bio line
 
     # Add extra space after each character bio
-    y += line_spacing * 3
+    y += line_spacing * 1
 
-# Write the second column
-for name, occupation, bio in second_column_bios:
+
+# Draw the second column Action
+for name, occupation, bio in character_action_list:
     # Draw the name
-    draw.text((x2, y2), name + ":", font=font, fill="darkred")
-    name_text_height = font.getbbox(name)[3]  # The height of the name text
-
-    draw.text((x2+450, y2+20),"("+ occupation + ")", font=font3, fill="darkorange")
-
-    y2 += name_text_height + line_spacing  # Move down for bio
+    draw.text((x, y), 'Your Character Actions', font=font3, fill="darkblue")  # Different color for distinction
+    name_text_height = font.getbbox(name)[3]
+    
+    # Draw the occupation
+    # draw.text((x + 1100, y + 90), "(" + occupation + ")", font=font3, fill="darkgreen")
+    
+    y += name_text_height + line_spacing  # Move down for bio
 
     # Wrap and draw the bio
     wrapped_bio = wrap_text(bio, wrap_width)
     for line in wrapped_bio:
-        draw.text((x2, y2), line, font=font2, fill="black")
-        bio_text_height = font2.getbbox(line)[3]  # The height of each line in the bio
-        y2 += bio_text_height + bio_line_spacing  # Move down for the next bio line
-
+        draw.text((x, y), line, font=font2, fill="black")
+        bio_text_height = font2.getbbox(line)[3]
+        y += bio_text_height + bio_line_spacing  # Move down for the next bio line
+    
     # Add extra space after each character bio
-    y2 += line_spacing * 3
+    y += line_spacing * 1
+# Write the second column
 
 # Save the result
 output_filename = './character_bios_two_columns.jpg'
