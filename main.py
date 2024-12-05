@@ -119,6 +119,7 @@ print(combined_list[0])
 #//////////////////////////////////////////////////////////
 # Loading the base image and fonts
 backgroundImage = Image.open('./Background/A4 character sheet.jpg')
+backgroundImage2 = Image.open('./Background/A4 character sheet post.jpg')
 
 # Load the custom font (Replace 'path/to/your/font.ttf' with the actual path)
 font_path = './font/Pacifico-Regular.ttf'  # Ensure the font path is correct
@@ -191,9 +192,9 @@ def split_text_on_symbol(draw, text, font, max_width, symbol="-"):
     return lines
 
 
-#Printtttttttttttttttttt
+#Printtttttttttttttttttt for post murder
 for char_name, occupation, actions in character_post_murder_action_list:
-    image = backgroundImage.copy()
+    image = backgroundImage2.copy()
     draw = ImageDraw.Draw(image)
 
     x2,y2 = 150,150
@@ -204,15 +205,15 @@ for char_name, occupation, actions in character_post_murder_action_list:
     y2 += line_spacing2
 
 # actions print
-    draw.text((x2, y2+120), "Actions:", fill="darkred", font=font3)
+    draw.text((x2, y2+120), "Post Murder Actions:", fill="darkred", font=font3)
     y2 = y2+100
-    actions = str(actions) if pd.notna(actions) else "VVV"
+    actions = str(actions) if pd.notna(actions) else "V"
     personality_lines = wrap_text_to_width(draw, actions, font2, column_width)
     for line in personality_lines:
         draw.text((x2, y2+120), line, fill="black", font=font2)
         y2 = y2+80
 #actions ot find
-    draw.text((x2, y2+400), f"You need to uncover the murder plot and find missing auction items ", fill="darkred", font=font2)
+    draw.text((x2, y2+400), f"Unravel the mystery, recover the stolen treasures, and cast your vote!", fill="darkred", font=font2)
     
 
     
