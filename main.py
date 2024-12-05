@@ -2,7 +2,7 @@ from os import *
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
-
+import textwrap
 # Path to your local Excel file
 file_path = 'Murder-Mystery-party-Actions/Murder-Mystery-party-planning.ods'
 
@@ -83,10 +83,10 @@ characterBios = [
 
 
 # lists 
-# Display the result
-print(character_action_list[4])
-print(character_post_murder_action_list[4][2])
-print(character_item_to_find_list[4][2])
+# # Display the result
+# print(character_action_list[4])
+# print(character_post_murder_action_list[4][2])
+# print(character_item_to_find_list[4][2])
 
 #combining lists here pre murder only
 # Combine lists based on character names ////////////////////////////////////
@@ -102,10 +102,10 @@ for bio in characterBios:
     # Append combined tuple
     combined_list.append((char_name, personality, occupation, actions, items))
 
-# Print combined list
-for entry in combined_list:
-    print(entry)
-
+# # Print combined list
+# for entry in combined_list:
+#     print(entry)
+print(combined_list[0])
 
 #//////////////////////////////////////////////////////////
 # Loading the base image and fonts
@@ -117,10 +117,10 @@ font_path = './font/Pacifico-Regular.ttf'  # Ensure the font path is correct
 
 
 font_size = 125
-font = ImageFont.truetype(font_path, font_size)
-font2= ImageFont.truetype('./font/Benne-Regular.ttf', 70)
-font3= ImageFont.truetype('./font/ABeeZee-Regular.ttf', 75)
-font4= ImageFont.truetype('./font/Benne-Regular.ttf', 70)
+font = ImageFont.truetype(font_path, font_size)#titla
+font2= ImageFont.truetype('./font/Benne-Regular.ttf', 70) #written text
+font3= ImageFont.truetype('./font/ABeeZee-Regular.ttf', 75) # occupation
+font4= ImageFont.truetype('./font/Benne-Regular.ttf', 70) #Heading
 
 # 77777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
 
@@ -129,37 +129,100 @@ img_width, img_height = backgroundImage.size
 image = backgroundImage.copy()
 draw = ImageDraw.Draw(image)
 
+
+
+
+
+# Function to wrap text to fit a column width
+def wrap_text_to_width(draw, text, font, max_width):
+    """Breaks text into lines that fit within max_width."""
+    words = text.split()
+    lines = []
+    current_line = []
+
+    for word in words:
+        # Test current line with the new word
+        test_line = " ".join(current_line + [word])
+        bbox = draw.textbbox((0, 0), test_line, font=font)
+        line_width = bbox[2] - bbox[0]  # Calculate the text width
+
+        if line_width <= max_width:
+            current_line.append(word)
+        else:
+            # Add current line to lines and start a new line
+            lines.append(" ".join(current_line))
+            current_line = [word]
+
+    # Add the last line
+    if current_line:
+        lines.append(" ".join(current_line))
+
+    return lines
+# Max column width in pixels
+column_width = 2000
+
+
+
+
+
+
+
+# Function to split text by `-` and ensure it fits within the specified column width
+def split_text_on_symbol(draw, text, font, max_width, symbol="-"):
+    """Splits text into lines based on the specified symbol and wraps to fit within max_width."""
+    # Split the text by the symbol
+    parts = text.split(symbol)
+    lines = []
+
+    for part in parts:
+        # Wrap each part to fit within the column width
+        part_lines = wrap_text_to_width(draw, part.strip(), font, max_width)
+        lines.extend(part_lines)  # Add wrapped lines for each part
+
+    return lines
+
+
+#Printtttttttttttttttttt
     
-
-
-
-
-# 77777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
-
-# Starting position for text
-x, y = 50, 50  # Adjust x and y for starting text position
-line_spacing = 50  # Adjust space between lines
-
-# Loop through the combined list and draw each entry
+# Loop through the combined list
 for char_name, personality, occupation, actions, items in combined_list:
-    # Write the character's details
+    # Use a fresh copy of the background image for each character
+    image = backgroundImage.copy()
+    draw = ImageDraw.Draw(image)
+    
+    # Starting position for text
+    x, y = 150, 150  # Adjust x and y for starting text position
+    line_spacing = 150  # Adjust space between lines
+    
+    # Write the character's details + occupation
     draw.text((x, y), f"{char_name}", fill="darkred", font=font)
+    draw.text((x+1000, y+75), f"{occupation}", fill="black", font=font3)
     y += line_spacing
-    draw.text((x, y), f"Personality: {personality}", fill="black", font=font2)
-    y += line_spacing
-    draw.text((x, y), f"Occupation: {occupation}", fill="black", font=font3)
-    y += line_spacing
-    draw.text((x, y), f"Actions: {actions}", fill="black", font=font4)
-    y += line_spacing
-    draw.text((x, y), f"Item to Find: {items}", fill="black", font=font2)
-    y += line_spacing * 2  # Extra space between characters
-    output_filename = './ActionCards/'+char_name+'.jpg'
-    image.save(output_filename)
 
-# Save or display the image
+    draw.text((x, y+120), "Personality:", fill="darkred", font=font3)
+    y = y+100
+    personality_lines = wrap_text_to_width(draw, personality, font2, column_width)
+    for line in personality_lines:
+        draw.text((x, y+120), line, fill="black", font=font2)
+        y = y+80
+
+
+
+
+
+        # actions text
+    draw.text((x, y+300), "Actions:", fill="darkred", font=font3)
+    y =y+100
+    actions_lines1 = split_text_on_symbol(draw, actions, font4, column_width)
+    for line in actions_lines1:
+        draw.text((x, y+300), line, fill="black", font=font2)
+        y = y+80
+
+    #actions ot find
+    draw.text((x, y+400), f"Auction item that you want: {items}", fill="darkred", font=font2)
+    
+    # Save the output for the current character
+    output_filename = f'./ActionCards/{char_name}.jpg'
+    image.save(output_filename)
 #////////////////////////////////////
 
-# Save the result
-output_filename = './ActionCards/'+char_name+'.jpg'
-image.save(output_filename)
-print(f"Saved: {output_filename}")
