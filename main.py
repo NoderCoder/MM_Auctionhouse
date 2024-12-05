@@ -4,10 +4,14 @@ from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
 import textwrap
 # Path to your local Excel file
-file_path = 'Murder-Mystery-party-Actions/Murder-Mystery-party-planning.ods'
+file_path = 'Murder-Mystery-party-Actions/Murder-Mystery-party-planning2.ods'
 
 # Load the Excel file into a pandas DataFrame
 df = pd.read_excel(file_path)
+
+
+
+
 # Select columns for the operation
 character_name_col = 'Character name'
 character_role_col = 'Character role'
@@ -22,8 +26,12 @@ storyline_columns = [
     'Hidden Appraisal',
     'The Secret Affair',
     'Insider Trading Leak',
-    'Business Travel'
+    'Business Travel','Indiana Jones',
 ]
+
+
+
+#seperate list for post murder action items
 
 # Function to merge storylines into bullet points
 def merge_storylines(row, columns):
@@ -42,6 +50,9 @@ character_action_list = list(filtered_df.itertuples(index=False, name=None))
 character_post_murder_action_list = list(filtered_df_post_murder.itertuples(index=False, name=None))
 character_item_to_find_list = list(filtered_df_item_find.itertuples(index=False, name=None))
 
+
+for entry in character_post_murder_action_list:
+    print(entry)
 
 
 # # List of Characters : Each character's information is stored
@@ -220,6 +231,8 @@ for char_name, personality, occupation, actions, items in combined_list:
 
     #actions ot find
     draw.text((x, y+400), f"Auction item that you want: {items}", fill="darkred", font=font2)
+    
+
     
     # Save the output for the current character
     output_filename = f'./ActionCards/{char_name}.jpg'
