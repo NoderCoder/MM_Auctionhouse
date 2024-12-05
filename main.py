@@ -22,7 +22,7 @@ storyline_columns = [
     'Auction house Story line',
     'Inheritance and stocks',
     'Underpaid Performance',
-    'Vanishing Necklace',
+    
     'Hidden Appraisal',
     'The Secret Affair',
     'Insider Trading Leak',
