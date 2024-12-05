@@ -51,8 +51,6 @@ character_post_murder_action_list = list(filtered_df_post_murder.itertuples(inde
 character_item_to_find_list = list(filtered_df_item_find.itertuples(index=False, name=None))
 
 
-for entry in character_post_murder_action_list:
-    print(entry)
 
 
 # # List of Characters : Each character's information is stored
@@ -194,7 +192,36 @@ def split_text_on_symbol(draw, text, font, max_width, symbol="-"):
 
 
 #Printtttttttttttttttttt
+for char_name, occupation, actions in character_post_murder_action_list:
+    image = backgroundImage.copy()
+    draw = ImageDraw.Draw(image)
+
+    x2,y2 = 150,150
+    line_spacing2 = 150  # Adjust space between lines
+    # Write the character's details + occupation
+    draw.text((x2, y2), f"{char_name}", fill="darkred", font=font)
+    draw.text((x2+1000, y2+75), f"{occupation}", fill="black", font=font3)
+    y2 += line_spacing2
+
+# actions print
+    draw.text((x2, y2+120), "Actions:", fill="darkred", font=font3)
+    y2 = y2+100
+    actions = str(actions) if pd.notna(actions) else "VVV"
+    personality_lines = wrap_text_to_width(draw, actions, font2, column_width)
+    for line in personality_lines:
+        draw.text((x2, y2+120), line, fill="black", font=font2)
+        y2 = y2+80
+#actions ot find
+    draw.text((x2, y2+400), f"You need to uncover the murder plot and find missing auction items ", fill="darkred", font=font2)
     
+
+    
+    # Save the output for the current character
+    output_filename = f'./ActionCards/{char_name}_post.jpg'
+    image.save(output_filename)
+#////////////////////////////////////
+
+
 # Loop through the combined list
 for char_name, personality, occupation, actions, items in combined_list:
     # Use a fresh copy of the background image for each character
