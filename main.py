@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
 import textwrap
 # Path to your local Excel file
-file_path = 'Murder-Mystery-party-Actions/Murder-Mystery-party-planning2.ods'
+file_path = 'Murder-Mystery-party-Actions/Murder-Mystery-party-planning3.ods'
 
 # Load the Excel file into a pandas DataFrame
 df = pd.read_excel(file_path)
@@ -207,7 +207,7 @@ for char_name, occupation, actions in character_post_murder_action_list:
 # actions print
     draw.text((x2, y2+120), "Post Murder Actions:", fill="darkred", font=font3)
     y2 = y2+100
-    actions = str(actions) if pd.notna(actions) else "V"
+    actions = str(actions) if pd.notna(actions) else ">(OVO)<"
     personality_lines = wrap_text_to_width(draw, actions, font2, column_width)
     for line in personality_lines:
         draw.text((x2, y2+120), line, fill="black", font=font2)
